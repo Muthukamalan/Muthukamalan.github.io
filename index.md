@@ -1,4 +1,4 @@
-# Muthukamalan
+# Muthukamalan.M 
 [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white)](https://github.com/Muthukamalan)
 [![LinkedIn](https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff)](https://www.linkedin.com/in/muthukamalan-m/)
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white)](mailto:muthukamalan98@gmail.com)
@@ -7,6 +7,92 @@
 
 
 ## 👨‍💼 Professional Summary
+Machine Learning Engineer with over 5 years of experience applying an engineering-driven approach to design, build, and scale end-to-end machine learning systems proven expertise in building production-grade ML systems and operationalizing AI solutions at scale.
+
+
+
+## Work Experience
+<section class="experience-item" style="font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <h3 style="margin:0;">
+      <a href="https://www.capgemini.com/in-en/" target="_blank" rel="noopener noreferrer">Capgemini</a>
+    </h3>
+    <div style="font-size:0.95rem;color:#444;">
+      <time datetime="2025-present">2025-present</time>
+    </div>
+  </div>
+  <div class="experience-content" style="margin-top:0.5rem;">
+    <ul style="margin:0.25rem 0 0 1.25rem;padding:0;">
+      <li>…</li>
+    </ul>
+  </div>
+</section>
+
+<section class="experience-item" style="font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <h3 style="margin:0;">
+      <a href="https://www.ojcommerce.com/" target="_blank" rel="noopener noreferrer">Ojcommerce</a>
+    </h3>
+    <div style="font-size:0.95rem;color:#444;">
+      <time datetime="2022-2025">2022–2025</time>
+    </div>
+  </div>
+  <div class="experience-content" style="margin-top:0.5rem;">
+    <ul style="margin:0.25rem 0 0 1.25rem;padding:0;">
+      <li>…</li>
+    </ul>
+  </div>
+</section>
+
+
+<section class="experience-item" style="font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <h3 style="margin:0;">
+      <a href="https://mathco.com/" target="_blank" rel="noopener noreferrer">The Math Company</a>
+    </h3>
+    <div style="font-size:0.95rem;color:#444;">
+      <time datetime="2022-2022">2022–2022</time>
+    </div>
+  </div>
+
+  <div class="experience-content" style="margin-top:0.5rem;">
+    <ul style="margin:0.25rem 0 0 1.25rem;padding:0;">
+      <li>…</li>
+    </ul>
+  </div>
+</section>
+
+<section class="experience-item" style="font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <h3 style="margin:0;">
+      <a href="https://www.tcs.com/" target="_blank" rel="noopener noreferrer">TCS</a>
+    </h3>
+    <div style="font-size:0.95rem;color:#444;">
+      <time datetime="2020-2022">2020–2022</time>
+    </div>
+  </div>
+
+  <div class="experience-content" style="margin-top:0.5rem;">
+    <ul style="margin:0.25rem 0 0 1.25rem;padding:0;">
+      <li>…</li>
+    </ul>
+  </div>
+</section>
+
+
+
+## Personal Projects
+
+| Project | Objective | Description  | Status |
+|---------|-----------|--------------|--------|
+| [Developer Principle](./posts/software-dev.md) | | | |
+| [Blog]() | | build MVC Framework of Django  WIP |
+| [Credit Risk Modeling in Azure](./posts/machine-learning.md) | |  WIP |
+| [Unsolved MNIST](./posts/mnist.md) | 99.4% Val Accuracy in <=20K params and <=20 Epochs | This project helps to understand of CNN archiecture with optimizer and Loss functions | WIP |
+| [YoloV3](./posts/yolo.md) |   | WIP |
+| [FemtoGPT](./posts/femto.md) |   | WIP |
+| [Deploy Image Generation in MLOps](./posts/generative-ai.md) | |  DONE |
+
 
 #### Technical Skills:
 
@@ -37,33 +123,13 @@
 
 
 ## Education
-- 
-
-
-## Work Experience
-
-
-
-
-## Personal Projects
-
-| Project | Objective | Description | Language & Tools | Status |
-|---------|-----------|-------------|------------------|--------|
-| [Unsolved MNIST](./posts/mnist.md) | 99.4% Val Accuracy in <=20K params and <=20 Epochs | This project helps to understand of CNN archiecture with optimizer and Loss functions | #pytorch, #lighting, #Tensorboard | WIP |
-| [YoloV3](./posts/yolo.md) |   | | #pytorch, #lighting, #Tensorboard | WIP |
-| [Blog]() | | build MVC Framework of Django | #python, #sqlite3, #devcontainers, #UV | WIP |
-| [Credit Risk Modeling in Azure](./posts/machine-learning.md) | | | #Azure, #Python, #Flask, #Compute, #Mlflow | WIP |
-| [Deploy Image Generation in MLOps](./posts/generative-ai.md) | | | #AWS, #GitHubAction, #Python, #lighting, #Tensorboard, #Pytorch, #EC2, #Prometheus, #Docker | DONE |
+- [Sona College of Technology](https://www.sonatech.ac.in/)
+- [Nadar Higher Secondary school](https://www.nhsskovilpatti.com/)
+- [Scaler](https://www.scaler.com/)
+- [The School of Ai](https://theschoolof.ai/)
 
 
 ## Certifications
-
-## 
-
-
-## ⭐ Contribute
-If you’d like to suggest new improvements, open a PR or issue! <br>
-Give a star if you like it.
 
 ---
 
