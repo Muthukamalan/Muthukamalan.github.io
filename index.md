@@ -1,10 +1,9 @@
-# Muthukamalan.M 
 [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white)](https://github.com/Muthukamalan)
 [![LinkedIn](https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff)](https://www.linkedin.com/in/muthukamalan-m/)
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white)](mailto:muthukamalan98@gmail.com)
 [![Kaggle](https://img.shields.io/badge/Kaggle-20BEFF?logo=kaggle&logoColor=fff)](https://www.kaggle.com/kakashikamalan)
 ![Profile view](https://komarev.com/ghpvc/?username=Muthukamalan&style=flat-square)
-
+<a href="tel:+91 9486872592">![](https://img.shields.io/badge/WhatsApp-25D366?style=flat&logo=whatsapp&logoColor=white)</a>
 
 ## 👨‍💼 Professional Summary
 Machine Learning Engineer with over 5+ years of experience applying an engineering-driven approach to design, build, and scale end-to-end machine learning systems proven expertise in building production-grade ML systems and operationalizing AI solutions at scale.
@@ -86,7 +85,7 @@ Machine Learning Engineer with over 5+ years of experience applying an engineeri
 | Project                               | Objective | Description  | Status |
 |:--------------------------------------|:----------|:-------------|:-------|
 | [Low Level Designs](./posts/llds.md)  |           |              |        |
-| [Blog]()                              |           |              |        |
+| [Static Blog Site]()                              |           |              |        |
 | [Microservices in K8s]()              |           |              |        |
 | [Credit Risk Modeling in Azure](./posts/ml-classify.md) | | | |
 | [Unsolved MNIST](./posts/mnist.md)    | 99.4% Val Accuracy in <=20K params and <=20 Epochs | This project helps to understand of CNN archiecture with optimizer and Loss functions | WIP |
@@ -134,7 +133,6 @@ Machine Learning Engineer with over 5+ years of experience applying an engineeri
 ## Voluntering 
 
 ## Sports
-
 
 ---
 
