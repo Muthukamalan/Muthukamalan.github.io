@@ -82,18 +82,21 @@ Machine Learning Engineer with over 5+ years of experience applying an engineeri
 
 ## Personal Projects
 
-| Project                               | Objective | Description  | Status |
-|:--------------------------------------|:----------|:-------------|:-------|
-| [Low Level Designs](./posts/llds.md)  |           |              |        |
-| [Static Blog Site]()                              |           |              |        |
-| [Microservices in K8s]()              |           |              |        |
-| [Credit Risk Modeling in Azure](./posts/ml-classify.md) | | | |
-| [Unsolved MNIST](./posts/mnist.md)    | 99.4% Val Accuracy in <=20K params and <=20 Epochs | This project helps to understand of CNN archiecture with optimizer and Loss functions | WIP |
-| [YoloV3](./posts/yolo.md) |   | | |
-| [FemtoGPT](./posts/femto.md) |   || |
-| [ModelServe](./posts/model-serve.md) |   || |
-| [K8sServe](./posts/llms-in-k8s.md) | |  | 
-| [Agentic RAG](./posts/rag.md) |   | | |
+| Project                                                 | Objective | Description  |
+|:--------------------------------------                  |:----------|:-------------|
+| [Low Level Designs](./posts/llds.md)                    |           |              |
+| [Static Blog Site]()                                    |           |              |
+| [Microservices in K8s]()                                |           |              |
+| [Credit Risk Modeling in Azure](./posts/ml-classify.md) |           |              |
+| [Unsolved MNIST](./posts/mnist.md)                      | 99.4% Val Accuracy in <=20K params and <=20 Epochs | This project helps to understand of CNN archiecture with optimizer and Loss functions |
+| [YoloV3](./posts/yolo.md)                               |           |              |
+| [UNet](./posts/unet.md)                                 |           |              |
+| [VAE](./posts/vae.md)                                   |           |              |
+| [FemtoGPT](./posts/femto.md)                            |           |              |
+| [FemtoFusion](./posts/multimod.md)                      |           |              |
+| [ModelServe](./posts/model-serve.md)                    |           |              |
+| [K8sServe](./posts/llms-in-k8s.md)                      |           |              | 
+| [Agentic RAG](./posts/rag.md)                           |           |              |
 
 #### Technical Skills:
 
