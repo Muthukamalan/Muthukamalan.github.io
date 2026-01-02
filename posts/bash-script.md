@@ -505,10 +505,11 @@ while read -r word; do
     echo "$word"
     ((i++))
 done < <(grep d /usr/file.txt)
-
+(
 
 # NOTE: `<(grep d /usr/file.txt)` is a file
 # NOTE: `read` #read it in streaming mode
+# File descriptor: A file descriptor in Linux (or Unix-like systems) is a small non-negative integer that a process uses as a handle to access an open file or I/O resource.  :: <()
 ```
 
 
@@ -848,7 +849,7 @@ echo script done!
 
 --- 
 
-## Permissions 
+##### Permissions 
 ```bash
 #!/usr/bin/bash
 **********
