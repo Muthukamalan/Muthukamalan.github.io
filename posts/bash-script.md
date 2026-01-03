@@ -16,6 +16,8 @@ mkdir -pv dirname               # make folder
 rmdir -pv dirnam                # remove folder
 cd destination_place            # change current directory => destination_place
 cat -n filename                 # print it in console
+head -n num_of_lines filename
+tail -n num_of_lines filename
 echo hello world > file.txt     # redirect/overwrite in the file
 echo "bye" >> file.txt          # append file
 ```
@@ -495,6 +497,8 @@ echo "$a"
 echo $(( 10#$a ))
 ```
 
+
+
 --- 
 
 ##### process subsitution
@@ -587,6 +591,7 @@ find location -type f -name '*.md'  -exec echo I found a file {} ';'
 find location -type f -name '*.md' | xargs                             # batch it
 
 find location -type f -name '*.md' -print0 | xargs -0                 # separate null to new lines
+locate --help
 ```
 
 --- 
@@ -867,6 +872,55 @@ LC_COLLATE=C ls -alh --group-directories-first --color=auto #list all in the cur
 
 --- 
 
+##### Logs, Monitoring and Troubleshooting
+```bash
+top
+htop
+uptime
+w
+lscpu # system's CPU in use
+```
+
+---
+
+##### Check Service and manage daemin
+```bash
+systemctl --help
+systemctl list-units --all --type= # service, socket path 
+systemctl list-dependencies 
+journalctl #  use journalctl to view and follow the system's journald log entries, which resides in /run/log/journal.
+```
+---
+
+##### Network Essentials
+```bash
+hostname        # managed under /etc/hostname 
+hostnamectl     # /etc/hosts
+
+ping -c4 google.com  # ping utility helps for connectivity checking
+
+ip route #
+info ip
+```
+---
+
+##### Processes
+```bash
+# List the current active process with their statuses, numbers, resource usage, etc.
+ps auxc
+fg
+jobs
+bg #%id
+```
+--- 
+
+##### CRON
+```bash
+crontab -l
+crontab -e
+# *seconds(0-59) *min(0-59) *hour(0-23) *day-of-month(1-31) *month(1-12) *day-of-week(0-7:: sunday=0 or 7) *year[optional]  *cmd
+# 0 5 * * * /usr/bin/backup.sh
+```
 
 ##### Credits
 - [Bash Scripting: yash.sh](https://youtu.be/Sx9zG7wa4FA?si=x1vScUxJjwoskcRQ)
