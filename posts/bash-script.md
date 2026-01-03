@@ -516,6 +516,33 @@ done < <(grep d /usr/file.txt)
 # File descriptor: A file descriptor in Linux (or Unix-like systems) is a small non-negative integer that a process uses as a handle to access an open file or I/O resource.  :: <()
 ```
 
+###### file descriptor in C program
+```c
+
+#include <unistd.h>   // read, close
+#include <fcntl.h>    // open
+#include <stdio.h>    // perror
+int main() {
+    char buffer[10];
+    int fd = open("LICENsSE", O_RDONLY);
+    printf("File descriptor returned by open(): %d\n", fd);
+    if (fd < 0) {
+        perror("open");
+        return 1;
+    }
+    int bytes_read = read(fd, buffer, sizeof(buffer));
+    if (bytes_read < 0) {
+        perror("read");
+        close(fd);
+        return 1;
+    }
+    write(1, buffer, bytes_read);  // write to stdout (fd 1)
+    close(fd);
+    write(1, "\n", 1);
+    return 0;
+}
+```
+
 
 ```bash
 #!/usr/bin/bash
