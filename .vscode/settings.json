@@ -1,0 +1,4 @@
+{
+    "github.copilot.enable":{"*":false},
+    "terminal.integrated.defaultProfile.linux": "bash (2)"
+}

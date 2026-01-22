@@ -305,6 +305,10 @@ goodbye(){
     echo "goodbye, $s!" > &1
 }
 
+
+# IO Redirections:: stdin,stdout, stderr
+cat missingfile 2> error.txt  # to redirect error msg
+cat missingfile 2>  /dev/null #  throw to black whole
 # help '(('
 # $# tells number of args
 # &0  stdin
@@ -906,7 +910,30 @@ htop
 uptime
 w
 lscpu # system's CPU in use
+# Architecture:             x86_64
+# Socket(s):                1      sockets are physical slots on motherboard where we can insert physical cpu. Socket enables communication between two process
+# Core(s) per socket:       8      each socket will have 8 cores
+# Thread(s) per core:       2      each core will run 2 threads at the same time
+
+# So, Total number of virtual CPU = Sockets x Cores x Threads
+# CPU(s):                    16
+
+lsmem --summary
+free -g
+
+lshw                    # List Hardware
+
+du -lsh filename        # size of the file
+
 ```
+##### File compression
+```bash
+tar -cf file.tar f1 f2 f3   # *.tar called as tarballs  -c:create -f:name-of-file
+tar -tf file.tar            # see content of tarball
+tar -xf file.tar            # extract content
+tar -zcf file.tar f1 f2 f3  # compress tarball to reduce size
+```
+
 
 ---
 
