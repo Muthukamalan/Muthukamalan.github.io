@@ -943,6 +943,17 @@ systemctl --help
 systemctl list-units --all --type= # service, socket path 
 systemctl list-dependencies 
 journalctl #  use journalctl to view and follow the system's journald log entries, which resides in /run/log/journal.
+
+
+runlevel # 5:: Boots into graphical interface and 3:: No-GUI
+systemctl get-default  # graphical.target
+# runlevel 0 -> poweroff.target
+# runlevel 1 -> rescue.target
+# runlevel 2 -> multi-user.target
+# runlevel 3 -> multi-user.target
+# runlevel 4 -> multi-user.target
+# runlevel 5 -> graphical.target
+# runlevel 6 -> reboot.target
 ```
 ---
 
@@ -955,6 +966,14 @@ ping -c4 google.com  # ping utility helps for connectivity checking
 
 ip route #
 info ip
+ss -tulp 
+netstat -tunpl
+lsof
+lspci # list all pci cards like ethernet card, video cards (peripheral component interconnect)
+
+
+lsblk # list all physical disks space <sda> and partitions are sda1,sda2,sda3..
+
 ```
 ---
 
@@ -974,9 +993,70 @@ crontab -l
 crontab -e
 # *seconds(0-59) *min(0-59) *hour(0-23) *day-of-month(1-31) *month(1-12) *day-of-week(0-7:: sunday=0 or 7) *year[optional]  *cmd
 # 0 5 * * * /usr/bin/backup.sh
+
+# Alternative systemd.timers
 ```
+
+##### Service management with SYSTEMD
+Systemd Tools
+- Systemctl
+- journelctl
+
+```bash
+# Systemctl
+- Mange system state
+- start/stop/restart/reload
+- enable/disable
+- list and manage units
+- list and update targets
+```
+
+```bash
+journalctl 
+journalctl -b # logs for current boot
+journalctl -u UNIT # particular unit
+```
+
+
+
+```bash
+# It should created in /etc/systemd/system/servicename.service
+
+[Unit]
+Description=Postgresql for Py3
+Documentation=http://github.com/muthu/postgresql
+After=postgresql.service
+
+[Service]
+ExecStart= /bin/bash /usr/bin/filename.sh
+User=
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy graphical.target   #systemctl get-default
+
+# starts with following `systemctl start servicename.service`
+# check the status `systemctl status servicename.service`
+# Stop the service `systemctl stop servicename.service`
+# reload services `systemctl daemon-reload`
+
+```
+
+##### Storage in Linux
+```bash
+# - Disk partitions
+lsblk
+fdisk -l /dev/sda 
+
+# Parition Types:- Primary, Extended and Logical
+# Parition Schema:- MBR(old), GPT(new:: unlimited partition, no-max size)
+# gdisk /dev/diskname
+```
+
 
 ##### Credits
 - [Bash Scripting: yash.sh](https://youtu.be/Sx9zG7wa4FA?si=x1vScUxJjwoskcRQ)
 - [Bash Pitfalls](https://mywiki.wooledge.org/BashPitfalls)
 - [Learn Linux: boot.dev](https://youtu.be/v392lEyM29A?si=uBwu1bNfbcjYhcoX)
+- [Linux for beginners with Hands-on Labs](https://www.coursera.org/)
