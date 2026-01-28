@@ -5,10 +5,12 @@ You type text, Bash reads it, evaluates it as code, prints the result, then wait
 
 ---
 
-##### Terminal Basics
+## Terminal Basics
+>
 > The terminal is your cmd to the operating system. These commands let you look around, move through directories, and create, inspect, or modify files without a GUI. Mastering these primitives turns the shell from a typing exercise into a precise navigation and file-manipulation tool
+
 ```bash
-ls -lah                         # list all files and dir in current folder     
+ls -lah                         # list all files and dir in current folder
 pwd                             # write pathfile of current folder
 touch filename.extension        # create file
 rm -i file                      # interactively remove from system. os.Remove(file)
@@ -21,10 +23,13 @@ tail -n num_of_lines filename
 echo hello world > file.txt     # redirect/overwrite in the file
 echo "bye" >> file.txt          # append file
 ```
+
 ---
 
-##### Searching Text with `grep`
+## Searching Text with `grep`
+>
 > `grep` searches text using patterns, not just plain words. It scans line by line and prints only the lines that match. This makes it one of the most powerful tools for exploring logs, configs, and source code—especially when combined with regular expressions
+
 ```bash
 grep -A1 pattern file               # 1 line after
 grep -B1 pattern file               # 1 line before
@@ -37,18 +42,22 @@ grep 'regex-pattern' filename
 grep -o '^dog' filename              # first starts with ^cat of each line
 cat README.md | grep -i "pattern"
 ```
+
 ---
 
-##### paging the file
+## paging the file
+>
 > Paging tools let you view large files one screen at a time instead of dumping everything into the terminal at once. They’re essential when reading logs, manuals, or command output that doesn’t fit on a single screen.
+
 ```bash
 less filename   # less is more :)
 more filename
 ```
 
---- 
+---
 
-##### Command Introspection
+## Command Introspection
+>
 > Command introspection helps you answer a deceptively important question: what exactly is Bash running when you type a command?
 A name might resolve to a builtin, an alias, a keyword, or an external binary—and knowing which one you’re invoking prevents subtle surprises.
 
@@ -64,47 +73,54 @@ file *
 
 ---
 
-##### Environment & Identity
+## Environment & Identity
+>
 > The shell runs inside a context
 
 ```bash
 # environment path
 echo $PATH | tr : '\n'  # translate old new
-echo $PWD 
+echo $PWD
 echo $MACHTYPE
 echo -n $HOSTNAME       # no new-line at end
 whoami
 uname -a
 ```
-----
 
-##### Variable & Command Subsitutions
+---
+
+## Variable & Command Subsitutions
+>
 > Variables store text values, and command substitution lets you capture the output of a command as a value.
 
 ```bash
 # init variable
 AWS_S3="sk-12345"  # Always DOUBLE QUOTE the variable
-echo "$AWS_S3"     
+echo "$AWS_S3"
 
 AWS_USER=`uname -a`        # Old School way of command substitution
 AWS_USER=$(uname -m)       # Best Pratice of command substitution/ preferred
 echo "$AWS_USER, and password $AWS_S3"
 ```
+
 ---
 
-##### File Permission
+## File Permission
+>
 > Every file in Unix has an access contract: who can read it, who can modify it, and who can execute it. File permissions enforce that contract, and the shell gives you direct control over it.
 
 ```bash
 # File Permission
 # permission ? owned-by group file-size modified-date dir/file
 file filename
-chmod +x file  # change permission of the file to executable mode.  
+chmod +x file  # change permission of the file to executable mode.
 chmod 755 file
 ```
+
 ---
 
-##### Shebang & Exit Code
+## Shebang & Exit Code
+
 ```sh
 #!/usr/bin/bash
 echo $?                # check any error in the last cmd run
@@ -117,10 +133,11 @@ PYTHON      ?= $(shell command -v python3 || command -v python)
 PIP          = $(PYTHON) -m pip
 ```
 
---- 
+---
 
-##### Input
-```bash 
+## Input
+
+```bash
 read first_name last_name
 > Linux love bash
 
@@ -149,13 +166,14 @@ echo "$os_password"             # *****
 # $#   # args count
 ```
 
---- 
+---
 
-##### Conditional 
+## Conditional
+
 ```bash
 #!/usr/bin/bash
 if [[ -n $1 ]]; then        #help '[['      #$1   <Second argment while calling script>
-    echo "Hi, $1"            
+    echo "Hi, $1"
 else
     # read only one line
     read -rp "Enter your name: " stdin        # -r means raw-string; -p prompt
@@ -171,7 +189,7 @@ help let
 # [[ -f FILE ]]                 True if file exists and is a regular file.
 # [[ FILE1 -nt FILE2 ]]         True if file1 is newer than file2 (according to modification date).
 # [[ FILE1 -ot FILE2 ]]         True if file1 is older than file2
-# [[ -z STRING ]]               True if string is empty. 
+# [[ -z STRING ]]               True if string is empty.
 # [[ -n STRING ]]               True if string is not empty.
 # [[  STRING1 = STRING2 ]]      True if the strings are equal.
 # [[ STRING1 != STRING2 ]]      True if the strings are not equal.
@@ -179,12 +197,13 @@ help let
 # [[ STRING1 > STRING2 ]]       True if STRING1 sorts after STRING2 lexicographically.
 # [[ ! EXPR ]]                  True if expr is false.
 # [[ EXPR1 -a EXPR2 ]]          True if both expr1 AND expr2 are true.
-# [[ EXPR1 -o EXPR2 ]]          True if either expr1 OR expr2 is true. 
+# [[ EXPR1 -o EXPR2 ]]          True if either expr1 OR expr2 is true.
 ```
 
---- 
+---
 
-##### Tests & Comparisons
+## Tests & Comparisons
+
 ```bash
 #!/bin/bash
 a=2
@@ -215,10 +234,10 @@ true   # $? => 0
 false  # $? => 1
 ```
 
+---
 
---- 
+## Case statement
 
-##### Case statement
 ```bash
 #!/usr/bin/bash
 s=$1
@@ -232,8 +251,8 @@ case "$s" in
     kamal* | rev*)
         echo there, you are
         ;;
-    lo*)                                           
-        echo anything starts with love          
+    lo*)
+        echo anything starts with love
         ;&                                  # fall-through
     love)
         echo love is all
@@ -244,10 +263,10 @@ case "$s" in
 esac
 ```
 
---- 
+---
 
+## Control Flow & Loops
 
-##### Control Flow & Loops
 ```bash
 #!/usr/bin/bash
 for i in "0", "muthu", kamalan; do   # For loop
@@ -277,9 +296,10 @@ for ((i=0;i<max; i++)); do
 done
 ```
 
---- 
+---
 
-##### Function & Scope
+## Function & Scope
+
 ```bash
 #!/usr/bin/bash
 
@@ -329,9 +349,10 @@ for name in "$@"; do
 done
 ```
 
---- 
+---
 
-##### Reading Files Safely
+## Reading Files Safely
+
 ```bash
 #!/usr/bin/bash
 read -rp "Enter your name: " word
@@ -346,8 +367,10 @@ done
 help : # Null command
 ```
 
---- 
-##### Indexed Array 
+---
+
+## Indexed Array
+
 ```bash
 #!/bin/bash
 declare -a array=(
@@ -378,12 +401,12 @@ done
 
 for item in "${array[@]}"; do
     echo "item in @ is: $item"
-done 
+done
 
 members="${array[@]}"  # stringfy and copy it  # WRONG WAY to do it
 family=( "${array[@]}" mariappan lakshmi )
 family+=(rajapaul priya)
-for m in "${family[@]}"; do 
+for m in "${family[@]}"; do
     echo "item is: $m"
 done
 
@@ -395,14 +418,13 @@ echo "${alliswell[@]}"
 echo "${#alliswell[@]}"  # length of an array
 ```
 
+---
 
+## Associative Array <HashMap>
 
---- 
-
-##### Associative Array <HashMap>
 ```bash
 #!/usr/bin/bash
-if ! declare -A fam; then 
+if ! declare -A fam; then
     echo "not able to make it" >&2
     exit 1
 fi
@@ -425,12 +447,12 @@ for key in "${!fam[@]}"; do
 done
 ```
 
+---
 
-
---- 
-
-##### IFS variable 
+## IFS variable
+>
 > Internal Field Separator, and it tells Bash how to split text into pieces.
+
 ```bash
 #!/bin/bash
 declare -a fam=(
@@ -454,10 +476,10 @@ echo "stringfy with ",": ${fam[*]}"
 echo "stringfy: ${fam[*]}"
 ```
 
---- 
+---
 
+## command subsitituion vs Same Shell
 
-##### command subsitituion vs Same Shell
 ```bash
 #!/bin/bash
 i=100
@@ -482,10 +504,10 @@ echo "Greeting and $hello, there"
 echo "i is $i"                 # global scope
 ```
 
---- 
+---
 
+## Arithmetic expression
 
-##### Arithmetic expression
 ```bash
 #!/usr/bin/bash
 a=100000
@@ -493,7 +515,7 @@ b=100
 echo $(( $a*$a ))  # EXPRESSION
 (( max = a > b ? a : b ))
 echo "$max"
-echo "$(( "word"*2 ))" # => 0 
+echo "$(( "word"*2 ))" # => 0
 help let
 
 a=010  #Octa
@@ -501,11 +523,10 @@ echo "$a"
 echo $(( 10#$a ))
 ```
 
+---
 
+## process subsitution
 
---- 
-
-##### process subsitution
 ```bash
 #!/usr/bin/bash
 i=0
@@ -520,7 +541,8 @@ done < <(grep d /usr/file.txt)
 # File descriptor: A file descriptor in Linux (or Unix-like systems) is a small non-negative integer that a process uses as a handle to access an open file or I/O resource.  :: <()
 ```
 
-###### file descriptor in C program
+### file descriptor in C program
+
 ```c
 
 #include <unistd.h>   // read, close
@@ -547,16 +569,16 @@ int main() {
 }
 ```
 
-
 ```bash
 #!/usr/bin/bash
 # NOTE:
 shift # means move 2nd argument to 1st   $2->$1
 ```
 
---- 
+---
 
-##### Text Processing: cut, tr, awk, sed
+## Text Processing: cut, tr, awk, sed
+
 ```bash
 #!/usr/bin/bash
 cat <<EOF > file.csv
@@ -587,17 +609,16 @@ cat /etc/passwd | awk -F: ' $1=="root" { printf("name: %s\n",$1 ); }'
 
 cat /etc/passwd | awk -F: '{ printf("%s\n",$1 ); }' | sort | uniq | wc -l
 
-wc -l # list 
+wc -l # list
 wc -w # word
-wc -c 
+wc -c
 ```
-
 
 ```bash
 #!/usr/bin/bash
 declare -A shells
 while IFS=: read -r name pass uid gid gecos home shell; do
-    # 
+    #
     if [[ $name == '#'* ]]; then
         continue
     fi
@@ -608,9 +629,10 @@ done < /etc/passwd
 declare -p shells
 ```
 
---- 
+---
 
-##### Finding  Files
+## Finding  Files
+
 ```bash
 find location -type f # check only file
 find location -type f -name '*.md' # check only file
@@ -618,22 +640,24 @@ find location -type d # check only file
 find location -type l # check only symlinks
 
 find location -type f -name '*.md'  -exec echo I found a file {} \;   # execute will run cmd on streaming/one-by-one
-find location -type f -name '*.md'  -exec echo I found a file {} ';'   
+find location -type f -name '*.md'  -exec echo I found a file {} ';'
 find location -type f -name '*.md' | xargs                             # batch it
 
 find location -type f -name '*.md' -print0 | xargs -0                 # separate null to new lines
 locate --help
 ```
 
---- 
+---
 
-##### Debug mode
+## Debug mode
+
 ```bash
 PS4='[debug]: ' bash -x script.sh
 bash -n script.sh                      # syntax check
 bash -u script.sh                      # check for undefined variable
 sellcheck script.sh
 ```
+
 ```bash
 #!/usr/bin/bash
 set -x
@@ -642,10 +666,10 @@ set -x
 set +x
 ```
 
+---
 
---- 
+## Pipestatus
 
-##### Pipestatus
 ```bash
 #!usr/bin/bash
 cat file_not_exists.txt | tr , "\t"
@@ -656,9 +680,10 @@ echo "${PIPESTATUS[*]}"
 # Each command in a pipeline gets its own exit code.
 ```
 
---- 
+---
 
-##### Timing command
+## Timing command
+
 ```bash
 time <--->
 real  # wall clock
@@ -666,14 +691,15 @@ user  # how much time it waits in user space
 sys   # how much time it waits in sys space
 ```
 
---- 
+---
 
-##### Sourcing File 
+## Sourcing File
+
 ```bash
 cat <<EOF > /tmp/greeetings.sh
 #!/bin/usr/bash
 greet(){
-    # run in local so don't mess with global scope 
+    # run in local so don't mess with global scope
     local name=$1
     echo "hi, $name"
 }
@@ -703,16 +729,15 @@ chmod +x /tmp/test.sh
 bash /tmp/test.sh
 ```
 
+---
 
---- 
+## params expansion
 
-
-##### params expansion 
 ```bash
 name="mutHu kamaLan"
 echo "$name"
 echo "name: ${name}"
-echo "substring: ${name:0: -3}" # :- will take precedence as default value subsitution 
+echo "substring: ${name:0: -3}" # :- will take precedence as default value subsitution
 
 
 echo "name with capital letter: ${name^}"
@@ -740,6 +765,7 @@ echo "${path##*/}"     # from the beginning but find last occurance
 echo "${path%/*}"      # from the end pick 1st / occurance <print "starting to /">
 echo "${path%/*}"
 ```
+
 ```bash
 #!/usr/bin/bash
 name=${1:-default_val}       # default value
@@ -749,7 +775,7 @@ echo -e "hello,\v${name}"
 echo -e "hello,\b${name}"
 
 useros=${1:-$USER}     # default assing if not passing
-echo "hello, $useros!" 
+echo "hello, $useros!"
 
 useros=${1:?'You must pass name'}         # show error if not passing
 echo "hello, $useros!"
@@ -766,10 +792,10 @@ for ((i=0;i<len;i++)); do
 done
 ```
 
+---
 
---- 
+## Array Expansion
 
-##### Array Expansion
 ```bash
 #!/usr/bin/bash
 fam=( kamalan revathi "voc nagar" )
@@ -780,9 +806,10 @@ printf '%s\n' "${fam[@]//'voc'/'cvp'}"
 (IFS=,; echo "${fam[*]}")
 ```
 
---- 
+---
 
-##### Globbing
+## Globbing
+
 ```bash
 ls -1 ./*.md
 ls -1 ./*.??
@@ -804,9 +831,10 @@ seq 1 20
 seq 10
 ```
 
---- 
+---
 
-##### brace Expansion
+## brace Expansion
+
 ```bash
 #/usr/bin/bash
 printf '%s\n' {cvp,tn,india}
@@ -816,14 +844,15 @@ printf '%s\n' tmp/files/*.{jpg,txt}
 
 fname="pl-"
 place=( "$fname."{txt,jpg,mov} )
-for i in "${place[@]}"; do 
+for i in "${place[@]}"; do
     echo "$i"
 done
 ```
 
---- 
+---
 
-##### printf 
+## printf
+
 ```bash
 #!/usr/bin/bash
 
@@ -838,21 +867,23 @@ printf -v x 'hello, %s' world!
 echo $x  # "hello, world!"
 ```
 
---- 
+---
 
-##### Date
+## Date
+
 ```bash
 date
 date +%s  # strftime
 datefmt='%Y-%m-%d %H:%M:%S'
 printf '%(%Y-%m-%d %H:%M:%S)T\n'
 
-printf '%(%Y-%m-%d %H:%M:%S)T  name=%2s\n' -1 muthu  # -1 represent last word 
+printf '%(%Y-%m-%d %H:%M:%S)T  name=%2s\n' -1 muthu  # -1 represent last word
 ```
 
---- 
+---
 
-##### Trap Signals
+## Trap Signals
+
 ```bash
 trap -l
 ```
@@ -882,10 +913,10 @@ echo ....
 echo script done!
 ```
 
+---
 
---- 
+## Permissions
 
-##### Permissions 
 ```bash
 #!/usr/bin/bash
 **********
@@ -896,14 +927,14 @@ echo script done!
 # *** # everyone
 ```
 
-
 ```bash
-LC_COLLATE=C ls -alh --group-directories-first --color=auto #list all in the current dir. LC_COLLATE=C set of rule recognizing only the US English alphabet — "a-z" and "A-Z" — as "letters", and sorting by byte value 
+LC_COLLATE=C ls -alh --group-directories-first --color=auto #list all in the current dir. LC_COLLATE=C set of rule recognizing only the US English alphabet — "a-z" and "A-Z" — as "letters", and sorting by byte value
 ```
 
---- 
+---
 
-##### Logs, Monitoring and Troubleshooting
+## Logs, Monitoring and Troubleshooting
+
 ```bash
 top
 htop
@@ -926,7 +957,9 @@ lshw                    # List Hardware
 du -lsh filename        # size of the file
 
 ```
-##### File compression
+
+## File compression
+
 ```bash
 tar -cf file.tar f1 f2 f3   # *.tar called as tarballs  -c:create -f:name-of-file
 tar -tf file.tar            # see content of tarball
@@ -934,14 +967,14 @@ tar -xf file.tar            # extract content
 tar -zcf file.tar f1 f2 f3  # compress tarball to reduce size
 ```
 
-
 ---
 
-##### Check Service and manage daemin
+## Check Service and manage daemin
+
 ```bash
 systemctl --help
-systemctl list-units --all --type= # service, socket path 
-systemctl list-dependencies 
+systemctl list-units --all --type= # service, socket path
+systemctl list-dependencies
 journalctl #  use journalctl to view and follow the system's journald log entries, which resides in /run/log/journal.
 
 
@@ -955,18 +988,20 @@ systemctl get-default  # graphical.target
 # runlevel 5 -> graphical.target
 # runlevel 6 -> reboot.target
 ```
+
 ---
 
-##### Network Essentials
+## Network Essentials
+
 ```bash
-hostname        # managed under /etc/hostname 
+hostname        # managed under /etc/hostname
 hostnamectl     # /etc/hosts
 
 ping -c4 google.com  # ping utility helps for connectivity checking
 
 ip route #
 info ip
-ss -tulp 
+ss -tulp
 netstat -tunpl
 lsof
 lspci # list all pci cards like ethernet card, video cards (peripheral component interconnect)
@@ -975,9 +1010,11 @@ lspci # list all pci cards like ethernet card, video cards (peripheral component
 lsblk # list all physical disks space <sda> and partitions are sda1,sda2,sda3..
 
 ```
+
 ---
 
-##### Processes
+## Processes
+
 ```bash
 # List the current active process with their statuses, numbers, resource usage, etc.
 ps auxc
@@ -985,9 +1022,11 @@ fg
 jobs
 bg #%id
 ```
---- 
 
-##### CRON
+---
+
+## CRON
+
 ```bash
 crontab -l
 crontab -e
@@ -997,8 +1036,10 @@ crontab -e
 # Alternative systemd.timers
 ```
 
-##### Service management with SYSTEMD
+## Service management with SYSTEMD
+
 Systemd Tools
+
 - Systemctl
 - journelctl
 
@@ -1012,12 +1053,10 @@ Systemd Tools
 ```
 
 ```bash
-journalctl 
+journalctl
 journalctl -b # logs for current boot
 journalctl -u UNIT # particular unit
 ```
-
-
 
 ```bash
 # It should created in /etc/systemd/system/servicename.service
@@ -1043,19 +1082,20 @@ WantedBy graphical.target   #systemctl get-default
 
 ```
 
-##### Storage in Linux
+## Storage in Linux
+
 ```bash
 # - Disk partitions
 lsblk
-fdisk -l /dev/sda 
+fdisk -l /dev/sda
 
 # Parition Types:- Primary, Extended and Logical
 # Parition Schema:- MBR(old), GPT(new:: unlimited partition, no-max size)
 # gdisk /dev/diskname
 ```
 
+## Credits
 
-##### Credits
 - [Bash Scripting: yash.sh](https://youtu.be/Sx9zG7wa4FA?si=x1vScUxJjwoskcRQ)
 - [Bash Pitfalls](https://mywiki.wooledge.org/BashPitfalls)
 - [Learn Linux: boot.dev](https://youtu.be/v392lEyM29A?si=uBwu1bNfbcjYhcoX)

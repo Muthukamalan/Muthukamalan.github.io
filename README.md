@@ -1,1 +1,3 @@
-please visit https://muthukamalan.github.io/
+# Blog
+
+please visit <https://muthukamalan.github.io/>
