@@ -1,4 +1,14 @@
 {
     "github.copilot.enable":{"*":false},
-    "terminal.integrated.defaultProfile.linux": "bash (2)"
+    "terminal.integrated.defaultProfile.linux": "bash (2)",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true
+    },
+    "files.readonlyInclude": {
+        "**/.git/hooks/pre-commit": true,
+    }
 }
